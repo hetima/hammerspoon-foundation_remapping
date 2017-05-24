@@ -21,7 +21,7 @@ local FRemap = require('foundation_remapping')
 local remapper = FRemap.new()
 ```
 
-Constructor without option returns global remapper. Remapping will be applied to any device.  
+Constructor without option returns global remapper. Remapping will be applied to any device.  
 To apply only to a specific device, pass the `vendorID` and `productID` to the constructor.
 
 ```lua
@@ -73,6 +73,16 @@ or
 hidutil property --filter '{"ProductID":xxxx,"VendorID":xxxx}' --get 'UserKeyMapping'
 ```
 
+Example (my configuration)
+```lua
+FRemap = require('foundation_remapping')
+remapper = FRemap.new({vendorID=0x4d9, productID=0x4545})
+remapper:remap('Muhenkan', 0x66):remap('Henkan', 'f18')
+remapper:remap('PCKana', 'rcmd')
+remapper:remap('lalt', 'lcmd'):remap('lcmd', 'lalt')
+remapper:remap('Application', 'escape')
+remapper:register()
+```
 
 ## License
 
