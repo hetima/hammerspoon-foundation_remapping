@@ -1,5 +1,6 @@
 
 --  foundation_remapping.lua
+-- https://github.com/hetima/hammerspoon-foundation_remapping
 
 -- reference:
 -- Technical Note TN2450 Remapping Keys in macOS 10.12 Sierra)
