@@ -6,9 +6,9 @@ foundation_remapping is [Hammerspoon](http://www.hammerspoon.org/) configuration
 This is simple one-key to one-key remapper, but almost all keys can be replaced, including left and right individually recognized modefier keys and PC spcific keys.
 
 Remapping mechanism is here:
-[Technical Note TN2450: Remapping Keys in macOS 10.12 Sierra)](https://developer.apple.com/library/content/technotes/tn2450/_index.html)
+[Technical Note TN2450: Remapping Keys in macOS 10.12 Sierra)](https://developer.apple.com/library/content/technotes/tn2450/)
 
-This script will required Sierra.
+This script requires Sierra.
 
 ## Install
 
@@ -37,7 +37,7 @@ remapper:remap('NFER', 0x66) -- Muhenkan to Eisuu
 remapper:remap('lalt', 'lcmd'):remap('lcmd', 'lalt') -- swap left cmd and alt
 ```
 
-Pass original keyCode and new keyCode typically used in Hammerspoon. In addition you can use the following PC spcific keys.
+Pass original keyCode and new keyCode normally used in Hammerspoon. In addition you can use the following PC spcific keys.
 
 `'PrintScreen'` `'ScrollLock'` `'Pause'` `'Insert'` `'Application'` `'XFER'` `'NFER'` `'Henkan'` `'Muhenkan'` `'PCKana'`
 

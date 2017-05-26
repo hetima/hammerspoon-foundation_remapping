@@ -4,7 +4,7 @@
 
 -- reference:
 -- Technical Note TN2450 Remapping Keys in macOS 10.12 Sierra)
--- https://developer.apple.com/library/content/technotes/tn2450/_index.html
+-- https://developer.apple.com/library/content/technotes/tn2450/
 
 local FOUNDATION_REMAPPING_VERSION = '0.1'
 
