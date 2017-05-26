@@ -6,7 +6,7 @@
 -- Technical Note TN2450 Remapping Keys in macOS 10.12 Sierra)
 -- https://developer.apple.com/library/content/technotes/tn2450/
 
-local FOUNDATION_REMAPPING_VERSION = '0.1'
+local FOUNDATION_REMAPPING_VERSION = '0.1.1'
 
 local log = hs.logger.new('foundation_remapping', 'debug')
 
