@@ -39,7 +39,7 @@ remapper:remap('lalt', 'lcmd'):remap('lcmd', 'lalt') -- swap left cmd and alt
 
 Pass original keyCode and new keyCode typically used in Hammerspoon. In addition you can use the following PC spcific keys.
 
-`'PrintScreen'` `'ScrollLock'` `'Pause'` `'Application'` `'XFER'` `'NFER'` `'Henkan'` `'Muhenkan'` `'PCKana'`
+`'PrintScreen'` `'ScrollLock'` `'Pause'` `'Insert'` `'Application'` `'XFER'` `'NFER'` `'Henkan'` `'Muhenkan'` `'PCKana'`
 
 and alias of individual modefier keys.
 

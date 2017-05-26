@@ -88,7 +88,7 @@ CFundationRemap.hidkeys = {
     [0x69] = 0x46, PrintScreen = 0x46, -- Print Screen
     [0x6b] = 0x47, ScrollLock = 0x47, -- Scroll Lock
     [0x71] = 0x48, Pause = 0x48, -- Pause
-    [0x72] = 0x49, -- Insert
+    [0x72] = 0x49, Insert = 0x49,-- Insert conflict with help
     [0x73] = 0x4a, -- Home
     [0x74] = 0x4b, -- Page Up
     [0x75] = 0x4c, -- Delete Forward
@@ -119,9 +119,9 @@ CFundationRemap.hidkeys = {
     [0x6e] = 0x65, Application=0x65,-- Application
     [0x7f] = 0x66, --This is the power key, scan code in ADB is 7f 7f, not 7f ff
     [0x51] = 0x67, -- pad =
-    [0x69] = 0x68, --  F13 on Andy keyboards
-    [0x6b] = 0x69, --  F14 on Andy keyboards
-    [0x71] = 0x6a, --  F15 on Andy keyboards
+    -- [0x69] = 0x68, --  F13 on Andy keyboards conflict with PrintScreen
+    -- [0x6b] = 0x69, --  F14 on Andy keyboards conflict with ScrollLock
+    -- [0x71] = 0x6a, --  F15 on Andy keyboards conflict with Pause
     [0x6a] = 0x6b, --  F16
     [0x40] = 0x6c, -- F17
     [0x4f] = 0x6d, -- F18
@@ -129,7 +129,7 @@ CFundationRemap.hidkeys = {
     [0x5a] = 0x6f, -- F20
     f21=0x70,  f22=0x71,  f23=0x72,  f24=0x73,
     Execute=0x74,
-    [0x72] = 0x75,
+    -- [0x72] = 0x75, --help conflict with insert
     Menu=0x76, Select=0x77, Stop=0x78, Again=0x79, Undo=0x7a, Cut=0x7b, Copy=0x7c, Paste=0x7d, Find=0x7e, 
     [0x4a] = 0x7f, -- Norsi Mute, or maybe 0x4a
     [0x48] = 0x80, -- Norsi volume up, otherwise is 0x48 in ADB
