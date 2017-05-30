@@ -11,10 +11,9 @@ local FOUNDATION_REMAPPING_VERSION = '0.1.1'
 local log = hs.logger.new('foundation_remapping', 'debug')
 
 
-CFundationRemap = {}
-CFundationRemap.version = function()
-    return FOUNDATION_REMAPPING_VERSION
-end
+CFundationRemap = {
+    version = FOUNDATION_REMAPPING_VERSION,
+}
 
 -- Never use these values as it is.
 -- Bitwise OR with 0x700000000 required. (or simply add 0x700000000)
