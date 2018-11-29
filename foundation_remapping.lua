@@ -276,6 +276,7 @@ local CFundationRemapImpl = {
         if cmd then
             if os.execute(cmd) ~= true then
                 log.d('error occured while register()')
+                log.d('command:' .. cmd)
             end
         end
         return self
@@ -286,6 +287,7 @@ local CFundationRemapImpl = {
         if cmd then
             if os.execute(cmd) ~= true then
                 log.d('error occured while unregister()')
+                log.d('command:' .. cmd)
             end
         end
         return self
