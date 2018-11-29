@@ -236,8 +236,12 @@ local CFundationRemapImpl = {
         if self.vendorID then
             filter = filter .. '"VendorID":' .. self.vendorID .. ','
         end
+        local optionName = '--filter'
+        if os.execute("hidutil property --help | grep -e '--matching'") then
+            optionName = '--matching'
+        end
         if #filter > 0 then
-            return ' --filter \'{' .. filter .. '}\''
+            return ' ' .. optionName .. ' \'{' .. filter .. '}\''
         end
         return ''
     end,
