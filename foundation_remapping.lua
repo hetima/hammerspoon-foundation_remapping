@@ -129,7 +129,7 @@ CFundationRemap.hidkeys = {
     f21=0x70,  f22=0x71,  f23=0x72,  f24=0x73,
     Execute=0x74,
     -- [0x72] = 0x75, --help conflict with insert
-    Menu=0x76, Select=0x77, Stop=0x78, Again=0x79, Undo=0x7a, Cut=0x7b, Copy=0x7c, Paste=0x7d, Find=0x7e, 
+    Menu=0x76, Select=0x77, Stop=0x78, Again=0x79, Undo=0x7a, Cut=0x7b, Copy=0x7c, Paste=0x7d, Find=0x7e,
     [0x4a] = 0x7f, -- Norsi Mute, or maybe 0x4a
     [0x48] = 0x80, -- Norsi volume up, otherwise is 0x48 in ADB
     [0x49] = 0x81, -- Norsi volume down
@@ -160,7 +160,7 @@ CFundationRemap.hidkeys = {
     [0x38] = 0xe1, lshift = 0xe1, --Left Shift
     [0x3a] = 0xe2, lalt = 0xe2, lopt = 0xe2, --Left option/alt key
     [0x37] = 0xe3, lcmd = 0xe3,--Left command key
-    [0x3e] = 0xe4, rctrl = 0xe4, rctl = 0xe4, --Right Control, use 0x3e virtual 
+    [0x3e] = 0xe4, rctrl = 0xe4, rctl = 0xe4, --Right Control, use 0x3e virtual
     [0x3c] = 0xe5, rshift = 0xe5, --Right Shift, use 0x3c virtual
     [0x3d] = 0xe6, ralt = 0xe6, ropt = 0xe6, --Right Option, use 0x3d virtual
     [0x36] = 0xe7, rcmd = 0xe7, --Right Command, use 0x36 virtual
@@ -197,7 +197,7 @@ local function hidKeyCode(keyCode)
             return hidCode
         end
     end
-    
+
     keyCode = realKeyCode(keyCode)
     if keyCode ~= nil then
         --数値keyCodeで探す
@@ -236,8 +236,12 @@ local CFundationRemapImpl = {
         if self.vendorID then
             filter = filter .. '"VendorID":' .. self.vendorID .. ','
         end
+        local optionName = '--filter'
+        if os.execute("hidutil property --help | grep -e '--matching'") then
+            optionName = '--matching'
+        end
         if #filter > 0 then
-            return ' --filter \'{' .. filter .. '}\''
+            return ' ' .. optionName .. ' \'{' .. filter .. '}\''
         end
         return ''
     end,
@@ -272,6 +276,7 @@ local CFundationRemapImpl = {
         if cmd then
             if os.execute(cmd) ~= true then
                 log.d('error occured while register()')
+                log.d('command:' .. cmd)
             end
         end
         return self
@@ -282,6 +287,7 @@ local CFundationRemapImpl = {
         if cmd then
             if os.execute(cmd) ~= true then
                 log.d('error occured while unregister()')
+                log.d('command:' .. cmd)
             end
         end
         return self
